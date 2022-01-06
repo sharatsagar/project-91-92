@@ -21,8 +21,23 @@ function send(){
     actual_anser=parseInt(number1) * parseInt(number2)
     question_word="<h4 id='word_display'>q."+number1+"X"+number2+"</h4>";
     input_box="<br> answer:<input id='input_check_box'>";
-    cheak_button="<br> <button class='btn btn-info'>check</button>";
+    cheak_button="<br> <button onclick='check()'class='btn btn-info'>check</button>";
     row=question_word+input_box+cheak_button;
     document.getElementById("output").innerHTML=row;
+}
+question_turn = "player1"; answer_turn = "player2";
+function check(){
+
+    get_answer=document.getElementById("input_check_box").value;
+    if(get_answer==word){
+        if(answer_turn=="player1"){
+            player1_score=player1_score+1;
+            document.getElementById("player1score").innerHTML=player1_score;
+        }
+else{
+    player2_score=player2_score+1;
+            document.getElementById("player2score").innerHTML=player2_score;
+}
+    }
 }
 
